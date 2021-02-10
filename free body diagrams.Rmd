@@ -1,0 +1,67 @@
+---
+title: "Adding Force Vectors"
+author: "Edouard Des Parois Perrault"
+date: "10/02/2021"
+fig_width: 2
+output: 
+  bookdown::pdf_document2:
+    latex_engine: "lualatex"
+    includes:
+      in_header: "preamble.latex"
+    keep_tex: true
+    number_setions: true
+    toc: true
+    number_figs: false
+    extra_dependencies: ["physics","siunitx","gensymb"]
+---
+
+# Question 2
+
+``` {r free-body-diagram, fig.cap="The cars data.", fig.width=3, echo = FALSE}
+knitr::include_graphics("./images/free-body-diagram-q2.png")
+```
+
+According to Figure \@ref(fig:free-body-diagram), the net force is \(52 - 36 = 16~\text{N}\).
+
+# Question 4
+
+The situation is illustrated in the image.
+
+``` {r tractors-pulling, fig.cap = "Tractor and Rocks Free Body Diagram", echo = FALSE}
+knitr::include_graphics("./images/tractors-pulling.png")
+```
+
+As shown in Figure \@ref(fig:tractors-pulling), there are essentially two vectors. The first is \(\vectorarrow{A} = 3 000 \si{N} [W]\) and the second is \(\vectorarrow{B} = 2 500 \si{N} [W 75 \degree S]\). We are looking for the vector produced when \(\vectorarrow{A} + \vectorarrow{B}\). Since \(\vectorarrow{A}\) is in one direction, we only need to concern ourselves with \(\vectorarrow{B}\). We can decompose \(\vectorarrow{B}\) into a triangle with sides \(x\) and \(y\) and solve for these sides using trigonometry, as shown in Figure \@ref(fig:triangle-trig-1).
+
+``` {r, triangle-trig-1, fig.cap="Trigonometry", echo=FALSE}
+knitr::include_graphics("./images/triangle-trig-1.png")
+```
+
+\begin{eqnarray}
+\sin (75) & = & \frac{x}{2 500} \\
+          & = & 2414.81 \\
+\end{eqnarray}
+
+\begin{eqnarray}
+\cos 75 & = & \frac{y}{2500} \\
+        & = & 647.05
+\end{eqnarray}
+
+Now, we combine the decomposed \(\vectorarrow{B}\) with \(\vectorarrow{A}\). The horizontal component is \(3 000 + 647.05 = 3647.05 \si{N}\) and the vertical is \( 2414.81 \si{N}\). Now, we can solve for the hypoteneuse, \(\Gamma\), and the angle \(\theta\), as shown in Figure \@ref(fig:trig-2).
+
+``` {r trig-2, fig.cap="Solving for the hypoteneuse and the missing angle", echo = FALSE}
+knitr::include_graphics("./images/triangle-trig-2.png")
+```
+
+\begin{eqnarray}
+  \Gamma & = & \sqrt{3647.05^2 + 2414.81^2} \\
+         & = & 4374.05
+\end{eqnarray}
+
+\begin{eqnarray}
+  \tan\theta & = & \frac{2414.81}{3647.05} \\
+  \theta & = & \tan^{-1}\left( \frac{2414.81}{3647.05} \right) \\
+  & \approx & 33.5 \degree 
+\end{eqnarray}
+
+Therefore, the missing vector is \(\vectorarrow{V} = 4373.99~\si{N} [W 33.4 \degree S]\)

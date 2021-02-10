@@ -1,0 +1,30 @@
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\makeatletter
+\fancyhead{}
+\fancyhead[LE,RO]{\@author}
+\fancyhead[RE,LO]{\textbf{\@title}}
+\makeatother
+
+\setmainfont{CMU Sans Serif}
+\makeatletter
+\renewcommand{\maketitle}{
+    \begin{titlepage}
+        \centering
+        \vspace*{\fill}
+        {\bf\Huge\@title\par}
+        \vspace{0.5cm}
+        {Edouard Des Parois Perrault\par}
+        \vspace{0.5cm}
+        {\bf\large Physics\par}
+        \vspace{0.5cm}
+        {Shawn Weiland \par}
+        \vfill
+        {\today\par}
+        \vspace{2cm}
+        \includegraphics[width=5cm]{./edouard-seal-v1.png}
+        \vspace*{\fill}
+    \end{titlepage}
+}
+\makeatother
+
